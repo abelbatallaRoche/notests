@@ -28,14 +28,6 @@ jobs:
           npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
           npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
 
-      - name: Cache npm
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
-
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit
 
@@ -51,14 +43,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         run: |
@@ -84,14 +68,6 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
-
       - name: Configure npm registry
         run: |
           npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
@@ -116,14 +92,6 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
-
       - name: Configure npm registry
         run: |
           npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
@@ -147,14 +115,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         run: |
@@ -186,14 +146,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         run: |
@@ -228,14 +180,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         run: |
