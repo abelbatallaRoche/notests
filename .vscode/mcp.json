@@ -1,0 +1,31 @@
+{
+  "servers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "type": "stdio"
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "${env:CONTEXT7_API_KEY}"
+      ]
+    },
+    "figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "type": "http"
+    },
+    "oneds": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/node_modules/@oneds/mcp-server/dist/server.mjs"
+      ],
+      "type": "stdio"
+    }
+  },
+  "inputs": []
+}

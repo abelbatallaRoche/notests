@@ -1,0 +1,21 @@
+# For private npm registries (e.g., Roche Artifactory), you must add a Dependabot secret (e.g., NPM_TOKEN)
+# in your GitHub repository settings so Dependabot can access and update private packages.
+# Without this, updates for private packages will fail with authentication errors.
+version: 2
+registries:
+  oneds:
+    type: npm-registry
+    url: https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
+    token: ${{secrets.NPM_TOKEN}}
+    replaces-base: false
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    registries:
+      - oneds
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
