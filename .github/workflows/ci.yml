@@ -55,6 +55,7 @@ jobs:
           node-version: "24"
 
       - name: Restore cache
+        id: cache
         uses: actions/cache@v4
         with:
           path: |
@@ -63,6 +64,16 @@ jobs:
           key: npm-cache-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             npm-cache-
+
+      - name: Configure npm registry
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
+          npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies (if cache miss)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --no-audit
 
       - name: Run typecheck
         run: npm run typecheck
@@ -81,6 +92,7 @@ jobs:
           node-version: "24"
 
       - name: Restore cache
+        id: cache
         uses: actions/cache@v4
         with:
           path: |
@@ -89,6 +101,16 @@ jobs:
           key: npm-cache-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             npm-cache-
+
+      - name: Configure npm registry
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
+          npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies (if cache miss)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --no-audit
 
       - name: Run lint
         run: npm run lint
@@ -107,6 +129,7 @@ jobs:
           node-version: "24"
 
       - name: Restore cache
+        id: cache
         uses: actions/cache@v4
         with:
           path: |
@@ -115,6 +138,16 @@ jobs:
           key: npm-cache-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             npm-cache-
+
+      - name: Configure npm registry
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
+          npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies (if cache miss)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --no-audit
 
       - name: Run format check
         run: npm run format:check
@@ -133,6 +166,7 @@ jobs:
           node-version: "24"
 
       - name: Restore cache
+        id: cache
         uses: actions/cache@v4
         with:
           path: |
@@ -141,6 +175,16 @@ jobs:
           key: npm-cache-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             npm-cache-
+
+      - name: Configure npm registry
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
+          npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies (if cache miss)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --no-audit
 
       - name: Build
         run: npm run build
@@ -166,6 +210,7 @@ jobs:
           node-version: "24"
 
       - name: Restore cache
+        id: cache
         uses: actions/cache@v4
         with:
           path: |
@@ -174,6 +219,16 @@ jobs:
           key: npm-cache-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             npm-cache-
+
+      - name: Configure npm registry
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
+          npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies (if cache miss)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --no-audit
 
       - name: Run tests
         run: npm run test -- --run
@@ -202,6 +257,7 @@ jobs:
           node-version: "24"
 
       - name: Restore cache
+        id: cache
         uses: actions/cache@v4
         with:
           path: |
@@ -210,6 +266,16 @@ jobs:
           key: npm-cache-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             npm-cache-
+
+      - name: Configure npm registry
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
+          npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies (if cache miss)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci --no-audit
 
       - name: Run Playwright tests
         run: npx playwright test
