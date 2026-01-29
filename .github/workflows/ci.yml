@@ -60,7 +60,7 @@ jobs:
           npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
-        run: npm install --no-audit
+        run: npm install --prefer-offline --no-audit
 
       - name: Run typecheck
         run: npm run typecheck
@@ -84,7 +84,7 @@ jobs:
           npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
-        run: npm install --no-audit
+        run: npm install --prefer-offline --no-audit
 
       - name: Run lint
         run: npm run lint
@@ -108,7 +108,7 @@ jobs:
           npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
-        run: npm install --no-audit
+        run: npm install --prefer-offline --no-audit
 
       - name: Run format check
         run: npm run format:check
@@ -132,7 +132,7 @@ jobs:
           npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
-        run: npm install --no-audit
+        run: npm install --prefer-offline --no-audit
 
       - name: Build
         run: npm run build
@@ -163,7 +163,7 @@ jobs:
           npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
-        run: npm install --no-audit
+        run: npm install --prefer-offline --no-audit
 
       - name: Run tests
         run: npm run test -- --run
@@ -197,7 +197,7 @@ jobs:
           npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
-        run: npm install --no-audit
+        run: npm install --prefer-offline --no-audit
 
       - name: Run Playwright tests
         run: npx playwright test
