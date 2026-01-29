@@ -64,14 +64,6 @@ jobs:
           restore-keys: |
             npm-cache-
 
-      - name: Configure npm registry
-        run: |
-          npm config set @oneds:registry=https://eu.repository.roche.com/artifactory/api/npm/oneds-npm/
-          npm config set //eu.repository.roche.com/artifactory/api/npm/oneds-npm/:_authToken=${{ secrets.NPM_TOKEN }}
-
-      - name: Install dependencies
-        run: npm install --prefer-offline --no-audit
-
       - name: Run typecheck
         run: npm run typecheck
 
