@@ -12,7 +12,7 @@ on:
 
 jobs:
   install:
-    name: Install Dependencies
+    name: install
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -43,7 +43,7 @@ jobs:
             npm-cache-
 
   typecheck:
-    name: TypeScript Type Checking
+    name: typecheck
     runs-on: ubuntu-latest
     needs: install
     steps:
@@ -78,7 +78,7 @@ jobs:
         run: npm run typecheck
 
   lint:
-    name: ESLint Code Quality
+    name: lint
     runs-on: ubuntu-latest
     needs: install
     steps:
@@ -113,7 +113,7 @@ jobs:
         run: npm run lint
 
   format:
-    name: Prettier Formatting Check
+    name: format
     runs-on: ubuntu-latest
     needs: install
     steps:
@@ -148,7 +148,7 @@ jobs:
         run: npm run format:check
 
   build:
-    name: Build Production App
+    name: build
     runs-on: ubuntu-latest
     needs: [install, typecheck, lint, format]
     steps:
@@ -190,7 +190,7 @@ jobs:
           retention-days: 7
 
   unit_tests:
-    name: Unit Tests with Coverage
+    name: unit tests
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -233,7 +233,7 @@ jobs:
           retention-days: 7
 
   e2e_tests:
-    name: End-to-End Tests with Playwright
+    name: e2e tests
     runs-on: ubuntu-latest
     needs: build
     container:
