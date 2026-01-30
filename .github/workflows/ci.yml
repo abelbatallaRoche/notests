@@ -31,9 +31,8 @@ jobs:
       - name: Cache node_modules
         uses: actions/cache@v4
         with:
-          path: node_modules
+          path: ${{ github.workspace }}/node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
-          enableCrossOsArchive: true
 
       - name: Install dependencies
         run: npm install --no-audit
@@ -239,7 +238,6 @@ jobs:
         with:
           path: node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
-          enableCrossOsArchive: true
 
       - name: Configure npm registry
         if: steps.cache.outputs.cache-hit != 'true'
