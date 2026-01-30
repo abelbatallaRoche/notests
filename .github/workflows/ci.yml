@@ -255,9 +255,9 @@ jobs:
 
       - name: Restore cache
         id: cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache@v4
         with:
-          path: /github/workspace/node_modules
+          path: node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Debug - Check paths after cache restore
