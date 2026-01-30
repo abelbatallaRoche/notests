@@ -236,7 +236,7 @@ jobs:
         id: cache
         uses: actions/cache/restore@v4
         with:
-          path: ${{ job.container.id && format('{0}/{1}', '/github/workspace', 'node_modules') || 'node_modules' }}
+          path: /github/workspace/node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Configure npm registry
