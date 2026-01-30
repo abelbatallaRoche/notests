@@ -31,8 +31,7 @@ jobs:
       - name: Cache node_modules
         uses: actions/cache@v4
         with:
-          path: |
-            ~/.npm
+          path: node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
@@ -55,8 +54,7 @@ jobs:
         id: cache
         uses: actions/cache/restore@v4
         with:
-          path: |
-            ~/.npm
+          path: node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Configure npm registry
@@ -89,8 +87,7 @@ jobs:
         id: cache
         uses: actions/cache/restore@v4
         with:
-          path: |
-            ~/.npm
+          path: node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Configure npm registry
@@ -123,8 +120,7 @@ jobs:
         id: cache
         uses: actions/cache/restore@v4
         with:
-          path: |
-            ~/.npm
+          path: node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Configure npm registry
@@ -157,8 +153,7 @@ jobs:
         id: cache
         uses: actions/cache/restore@v4
         with:
-          path: |
-            ~/.npm
+          path: node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Configure npm registry
@@ -198,8 +193,7 @@ jobs:
         id: cache
         uses: actions/cache/restore@v4
         with:
-          path: |
-            ~/.npm
+          path: node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Configure npm registry
@@ -242,8 +236,7 @@ jobs:
         id: cache
         uses: actions/cache/restore@v4
         with:
-          path: |
-            ~/.npm
+          path: node_modules
           key: npm-cache-${{ hashFiles('package-lock.json') }}
 
       - name: Configure npm registry
