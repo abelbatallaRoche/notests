@@ -32,11 +32,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            node_modules
             ~/.npm
           key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Install dependencies
         run: npm install --no-audit
@@ -59,11 +56,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            node_modules
             ~/.npm
           key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         if: steps.cache.outputs.cache-hit != 'true'
@@ -96,11 +90,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            node_modules
             ~/.npm
           key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         if: steps.cache.outputs.cache-hit != 'true'
@@ -133,11 +124,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            node_modules
             ~/.npm
           key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         if: steps.cache.outputs.cache-hit != 'true'
@@ -170,11 +158,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            node_modules
             ~/.npm
           key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         if: steps.cache.outputs.cache-hit != 'true'
@@ -214,11 +199,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            node_modules
             ~/.npm
           key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         if: steps.cache.outputs.cache-hit != 'true'
@@ -261,11 +243,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: |
-            node_modules
             ~/.npm
           key: npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            npm-cache-
 
       - name: Configure npm registry
         if: steps.cache.outputs.cache-hit != 'true'
